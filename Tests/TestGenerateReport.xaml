@@ -1,0 +1,85 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="TestGenerateReport" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="396,641" sap2010:WorkflowViewState.IdRef="TestGenerateReport_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="44">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="40">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="TestGenerateReport" sap:VirtualizedContainerService.HintSize="376,581" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="in_DataTable" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="in_Config" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt1" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt2" />
+      <Variable x:TypeArguments="scg:List(scg:Dictionary(x:String, x:Object))" Default="[New List(Of Dictionary(Of String, Object))]" Name="RequesDataList" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:BuildDataTable DataTable="[dt1]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Date&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Open&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;High&quot; type=&quot;xs:double&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Low&quot; type=&quot;xs:double&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Close&quot; type=&quot;xs:double&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Volume&quot; type=&quot;xs:double&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Date&gt;Dec 10, 2019&lt;/Date&gt;&#xD;&#xA;    &lt;Open&gt;7030.06&lt;/Open&gt;&#xD;&#xA;    &lt;High&gt;7408.58&lt;/High&gt;&#xD;&#xA;    &lt;Low&gt;7029.29&lt;/Low&gt;&#xD;&#xA;    &lt;Close&gt;7047.92&lt;/Close&gt;&#xD;&#xA;    &lt;Volume&gt;30433517289&lt;/Volume&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Date&gt;Dec 08, 2019&lt;/Date&gt;&#xD;&#xA;    &lt;Open&gt;8023.64&lt;/Open&gt;&#xD;&#xA;    &lt;High&gt;8110.1&lt;/High&gt;&#xD;&#xA;    &lt;Low&gt;7597.38&lt;/Low&gt;&#xD;&#xA;    &lt;Close&gt;7642.75&lt;/Close&gt;&#xD;&#xA;    &lt;Volume&gt;22514243371&lt;/Volume&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Date&gt;Dec 07, 2019&lt;/Date&gt;&#xD;&#xA;    &lt;Open&gt;8811.94&lt;/Open&gt;&#xD;&#xA;    &lt;High&gt;8826.94&lt;/High&gt;&#xD;&#xA;    &lt;Low&gt;8692.55&lt;/Low&gt;&#xD;&#xA;    &lt;Close&gt;8708.09&lt;/Close&gt;&#xD;&#xA;    &lt;Volume&gt;19084739974&lt;/Volume&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:BuildDataTable DataTable="[dt2]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Date&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Open&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;High&quot; type=&quot;xs:double&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Low&quot; type=&quot;xs:double&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Close&quot; type=&quot;xs:double&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Volume&quot; type=&quot;xs:double&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Date&gt;Dec 10, 2019&lt;/Date&gt;&#xD;&#xA;    &lt;Open&gt;4347.69&lt;/Open&gt;&#xD;&#xA;    &lt;High&gt;4413.09&lt;/High&gt;&#xD;&#xA;    &lt;Low&gt;3795.16&lt;/Low&gt;&#xD;&#xA;    &lt;Close&gt;3880.76&lt;/Close&gt;&#xD;&#xA;    &lt;Volume&gt;4679500000&lt;/Volume&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Date&gt;Dec 9, 2019&lt;/Date&gt;&#xD;&#xA;    &lt;Open&gt;4360.7&lt;/Open&gt;&#xD;&#xA;    &lt;High&gt;4396.42&lt;/High&gt;&#xD;&#xA;    &lt;Low&gt;4195.68&lt;/Low&gt;&#xD;&#xA;    &lt;Close&gt;4347.11&lt;/Close&gt;&#xD;&#xA;    &lt;Volume&gt;4871490000&lt;/Volume&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Date&gt;Dec 8, 2019&lt;/Date&gt;&#xD;&#xA;    &lt;Open&gt;4611.57&lt;/Open&gt;&#xD;&#xA;    &lt;High&gt;4629.64&lt;/High&gt;&#xD;&#xA;    &lt;Low&gt;4365.64&lt;/Low&gt;&#xD;&#xA;    &lt;Close&gt;4365.94&lt;/Close&gt;&#xD;&#xA;    &lt;Volume&gt;4569370000&lt;/Volume&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="in_Config = New Dictionary(Of String, Object)&#xA;in_Config.Add(&quot;RelativeReportPath&quot;, &quot;Data\Temp\&quot;)&#xA;&#xA;Dim data1 As New Dictionary(Of String, Object)&#xA;data1.Add(&quot;name&quot;, &quot;Vasia Pupkin&quot;)&#xA;data1.Add(&quot;currency&quot;, &quot;BTC19&quot;)&#xA;data1.Add(&quot;period&quot;, &quot;01.11.2019-30.11.2019&quot;)&#xA;data1.Add(&quot;data&quot;, JsonConvert.SerializeObject(in_dt1))&#xA;data1.Add(&quot;format&quot;, &quot;EXCEL&quot;)&#xA;&#xA;Dim data2 As New Dictionary(Of String, Object)&#xA;data2.Add(&quot;name&quot;, &quot;Ivan Petrov&quot;)&#xA;data2.Add(&quot;currency&quot;, &quot;BTC18&quot;)&#xA;data2.Add(&quot;period&quot;, &quot;01.11.2018-30.11.2018&quot;)&#xA;data2.Add(&quot;data&quot;, JsonConvert.SerializeObject(in_dt2))&#xA;data2.Add(&quot;format&quot;, &quot;HTML&quot;)&#xA;&#xA;in_RequesDatatList.Add(data1)&#xA;in_RequesDatatList.Add(data2)" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+      <ui:InvokeCode.Arguments>
+        <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InOutArgument>
+        <InArgument x:TypeArguments="scg:List(scg:Dictionary(x:String, x:Object))" x:Key="in_RequesDatatList">[RequesDataList]</InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt1">[dt1]</InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt2">[dt2]</InArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Run GenerateReport with test data" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="FinanceYahoo\GenerateReport.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_RequesterName">John Doe</InArgument>
+        <InArgument x:TypeArguments="scg:List(scg:Dictionary(x:String, x:Object))" x:Key="in_RequestDataList">[RequesDataList]</InArgument>
+        <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="out_ReportPath" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+  </Sequence>
+</Activity>
